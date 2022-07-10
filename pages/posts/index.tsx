@@ -2,6 +2,7 @@ import { NextPage } from 'next'
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
 import { DynamicPosts } from '../../components/ErrorTest/DynamicPosts'
+import { GlobalErrorTest } from '../../components/ErrorTest/GlobalError'
 import useDummyAPI from '../api/swr/DummyApi/useDummyAPI'
 
 const PostsPage: NextPage = () => {
@@ -36,6 +37,7 @@ const PostsPage: NextPage = () => {
                 <p> SWR | React Hooks </p>
                 <div style={{ alignContent: 'center', height: '100%' }}>
                     <RecoilRoot>
+                        <GlobalErrorTest />
                         <DynamicPosts
                             loading={loading}
                             posts={response?.data}
