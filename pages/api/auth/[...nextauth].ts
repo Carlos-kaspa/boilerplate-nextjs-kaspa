@@ -85,18 +85,18 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
                     // that is false/null if the credentials are invalid.
                     // e.g. return { id: 1, name: 'J Smith', email: 'jsmith@example.com' }
                     // You can also use the `req` object to obtain additional parameters
-                    // (i.e., the request IP address)
-                    const res = await fetch('/your/endpoint', {
-                        method: 'POST',
-                        body: JSON.stringify(credentials),
-                        headers: { 'Content-Type': 'application/json' },
-                    })
-                    const user = await res.json()
+                    // // (i.e., the request IP address)
+                    // const res = await fetch('/your/endpoint', {
+                    //     method: 'POST',
+                    //     body: JSON.stringify(credentials),
+                    //     headers: { 'Content-Type': 'application/json' },
+                    // })
+                    // const user = await res.json()
 
-                    // If no error and we have user data, return it
-                    if (res.ok && user) {
-                        return user
-                    }
+                    // // If no error and we have user data, return it
+                    // if (res.ok && user) {
+                    //     return user
+                    // }
                     // Return null if user data could not be retrieved
                     return null
                 },
@@ -112,7 +112,7 @@ export default async function auth(req: NextApiRequest, res: NextApiResponse) {
             },
             async session({ session, token, user }) {
                 // Send properties to the client, like an access_token from a provider.
-                session.accessToken = token.accessToken
+                // session.accessToken = token.accessToken
                 return session
             },
         },

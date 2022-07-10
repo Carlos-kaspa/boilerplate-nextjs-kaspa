@@ -1,8 +1,14 @@
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
-import type { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode } from 'react'
 import { SessionProvider } from 'next-auth/react'
+import { Footer } from '../components/shared/Footer/Footer'
+import GlobalErrorBoundary from '../components/shared/ErrorBoundary/ErrorBoundary'
+import dynamic from 'next/dynamic'
 
+const DynamicResponsiveAppBar = dynamic(() => import('../components/shared/Header/AppHeader'), {
+    suspense: true,
+})
 export type NextPageWithLayout = NextPage & {
     getLayout?: (page: ReactElement) => ReactNode
 }
@@ -20,10 +26,12 @@ export default function MyApp({
     const getLayout = Component.getLayout ?? ((page) => page)
 
     return (
-        <>
-            <SessionProvider session={session}>
+        <GlobalErrorBoundary>
+            <DynamicResponsiveAppBar />
+            <SessionProvider session={session ?? null}>
                 {getLayout(<Component {...pageProps} />)}
+                <Footer />
             </SessionProvider>
-        </>
+        </GlobalErrorBoundary>
     )
 }

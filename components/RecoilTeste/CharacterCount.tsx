@@ -8,5 +8,5 @@ interface CharacterCountProps {
 export const CharacterCount = () => {
     const count = useRecoilValue(charCountState)
 
-    return <>Character Count: {count}</>
+    return <p>Character Count: {count}</p>
 }
