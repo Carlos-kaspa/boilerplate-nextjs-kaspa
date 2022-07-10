@@ -9,7 +9,7 @@
         "lint": "next lint",
         "prepare": "husky install",
         "postinstall": "husky install",
-        "test": "jest",
+        "test": "next lint",
         "test-all": "yarn lint && yarn type-check && yarn test",
         "commitlint": "commitlint"
     },
