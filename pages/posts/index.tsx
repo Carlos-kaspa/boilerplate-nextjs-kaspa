@@ -1,15 +1,16 @@
-import type { NextPage } from 'next'
+import { NextPage } from 'next'
 import Head from 'next/head'
 import { RecoilRoot } from 'recoil'
-import { RecoilJsDemo } from '../components/RecoilTeste/RecoilTeste'
-import { ComponentErrorHandling } from '../components/ErrorTest/ComponentError'
-import { GlobalErrorTest } from '../components/ErrorTest/GlobalError'
+import { DynamicPosts } from '../../components/ErrorTest/DynamicPosts'
+import useDummyAPI from '../api/swr/DummyApi/useDummyAPI'
 
-const Home: NextPage = () => {
+const PostsPage: NextPage = () => {
+    const { response, loading, mutate } = useDummyAPI('post?limit=10')
+
     return (
         <>
             <Head>
-                <title>Boilerplate Kaspa | Next Js</title>
+                <title>Posts Demo | Next Js</title>
                 <meta
                     name="description"
                     content="NextJs App Boilerplate By Carlos-kaspa"
@@ -31,16 +32,14 @@ const Home: NextPage = () => {
                     paddingBottom: '5rem',
                 }}
             >
-                <h1>Boilerplate NextJs - Kaspa</h1>
-                <p> Next-Auth | RecoilJs | ESLint | Prettier | Husky | SWR</p>
+                <h1>SWR Demo - Kaspa</h1>
+                <p> SWR | React Hooks </p>
                 <div style={{ alignContent: 'center', height: '100%' }}>
-                    <h2> Recoil Js Demo </h2>
                     <RecoilRoot>
-                        <RecoilJsDemo />
-                        <br />
-                        <h2> Error Handling Demo </h2>
-                        <GlobalErrorTest />
-                        <ComponentErrorHandling />
+                        <DynamicPosts
+                            loading={loading}
+                            posts={response?.data}
+                        />
                     </RecoilRoot>
                 </div>
             </main>
@@ -48,4 +47,4 @@ const Home: NextPage = () => {
     )
 }
 
-export default Home
+export default PostsPage

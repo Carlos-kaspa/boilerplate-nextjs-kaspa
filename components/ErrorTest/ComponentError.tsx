@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import ContextErrorHandler from '../shared/ContextErrorHandler/ContextErrorHandler'
-
+// import dynamic from 'next/dynamic'
+// const DynamicLoader = dynamic(() => import('./BlogPost), {
+//     suspense: true,
+//   })
 export const ComponentErrorHandling = () => {
     return (
         <div style={{ width: 300, margin: '20px auto' }}>
