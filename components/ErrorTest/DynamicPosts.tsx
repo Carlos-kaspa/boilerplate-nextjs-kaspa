@@ -1,4 +1,13 @@
-import { BlogPost, IBlogPost } from './BlogPost'
+import React from 'react'
+import ComponentLoader from '../shared/ComponentLoader/ComponenLoader'
+import ContextErrorHandler from '../shared/ContextErrorHandler/ContextErrorHandler'
+import dynamic from 'next/dynamic'
+import { IBlogPost } from '../shared/Mui/MuiCard'
+
+const DynamicMuiCard = dynamic(() => import('../shared/Mui/MuiCard'), {
+    suspense: true,
+})
+
 
 interface IDynamicPosts {
     loading: boolean
@@ -12,24 +21,25 @@ export const DynamicPosts = ({ loading, posts }: IDynamicPosts) => {
                 gap: 10,
                 flexWrap: 'wrap',
                 padding: '5rem',
+                justifyContent: 'center'
             }}
         >
-            {loading ? (
-                <p> loading ... </p>
-            ) : (
-                posts.map((post: IBlogPost, index: number) => (
-                    <BlogPost
-                        key={`blogpost-${index}`}
-                        owner={post.owner}
-                        text={post.text}
-                        id={post.id}
-                        image={post.image}
-                        likes={post.likes}
-                        publishDate={post.publishDate}
-                        tags={post.tags}
-                    />
-                ))
-            )}
+            <ComponentLoader loading={loading}>
+                {posts && posts.map((post: IBlogPost) => (
+                    <ContextErrorHandler key={post.id}>
+                        <DynamicMuiCard
+                            key={`blogpost-${post.id}`}
+                            owner={post.owner}
+                            text={post.text}
+                            id={post.id}
+                            image={post.image}
+                            likes={post.likes}
+                            publishDate={post.publishDate}
+                            tags={post.tags}
+                        />
+                    </ContextErrorHandler>
+                ))}
+            </ComponentLoader>
         </div>
     )
 }

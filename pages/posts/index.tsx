@@ -5,7 +5,7 @@ import { DynamicPosts } from '../../components/ErrorTest/DynamicPosts'
 import useDummyAPI from '../api/swr/DummyApi/useDummyAPI'
 
 const PostsPage: NextPage = () => {
-    const { response, loading, mutate } = useDummyAPI('post?limit=10')
+    const { response, loading, mutate } = useDummyAPI('post?limit=100')
 
     return (
         <>
