@@ -1,17 +1,14 @@
-import { NextPage } from 'next'
-import Head from 'next/head'
-import { RecoilRoot } from 'recoil'
-import { DynamicPosts } from '../../components/ErrorTest/DynamicPosts'
-import { GlobalErrorTest } from '../../components/ErrorTest/GlobalError'
-import useDummyAPI from '../api/swr/DummyApi/useDummyAPI'
+import Head from "next/head"
+import { NextPage } from "next"
+import { RecoilRoot } from "recoil"
+import { RecoilJsDemo } from "../../components/RecoilTeste/RecoilTeste"
 
-const PostsPage: NextPage = () => {
-    const { response, loading, mutate } = useDummyAPI('post?limit=100')
 
+const Home: NextPage = () => {
     return (
         <>
             <Head>
-                <title>Posts Demo | Next Js</title>
+                <title>Recoil Js Demo</title>
                 <meta
                     name="description"
                     content="NextJs App Boilerplate By Carlos-kaspa"
@@ -29,19 +26,13 @@ const PostsPage: NextPage = () => {
                     flexGrow: 'auto',
                     width: '100%',
                     textAlign: 'center',
-                    border: '2px solid #d68edd',
                     paddingBottom: '5rem',
                 }}
             >
-                <h1>SWR Demo - Kaspa</h1>
-                <p> SWR | React Hooks </p>
+                <h1> Recoil Js Demo </h1>
                 <div style={{ alignContent: 'center', height: '100%' }}>
                     <RecoilRoot>
-                        <GlobalErrorTest />
-                        <DynamicPosts
-                            loading={loading}
-                            posts={response?.data}
-                        />
+                        <RecoilJsDemo />
                     </RecoilRoot>
                 </div>
             </main>
@@ -49,4 +40,4 @@ const PostsPage: NextPage = () => {
     )
 }
 
-export default PostsPage
+export default Home

@@ -2,8 +2,9 @@ import useSWR from 'swr'
 import { DummyAPIFetcher } from './DummyApiFetcher'
 
 export default function useDummyAPI(path: string) {
+    const baseUrl = process.env.NEXT_PUBLIC_DUMMYAPI_URL
     const { data, mutate, error } = useSWR(
-        'https://dummyapi.io/data/v1/' + path,
+        baseUrl + path,
         DummyAPIFetcher
     )
 

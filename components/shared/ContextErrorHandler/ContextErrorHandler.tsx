@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { ComponentProps, ComponentPropsWithRef } from 'react'
 import { VscWarning } from 'react-icons/vsc'
+
+interface IContextErrorHandlerProps extends ComponentPropsWithRef<any> {
+    hideOnError?: boolean
+}
+
 export default class ContextErrorHandler extends React.Component<
     any,
     { hasError: boolean }
 > {
-    constructor(props: {} | Readonly<{}>) {
+    constructor(props: IContextErrorHandlerProps | Readonly<{}>) {
         super(props)
-
         // Define a state variable to track whether is an error or not
         this.state = { hasError: false }
     }
@@ -16,14 +20,17 @@ export default class ContextErrorHandler extends React.Component<
     }
     componentDidCatch(error: any, errorInfo: any) {
         // You can use your own error logging service here
-        console.log('Logging tool call for component level errors')
         console.log({ error, errorInfo })
     }
 
     render() {
         // Check if the error is thrown
         if (this.state.hasError) {
-            // You can render any custom fallback UI
+            // You can hide the component on error
+            if(this.props.hideOnError){
+                return null
+            }
+            // Or you can render any custom fallback UI
             return (
                 <div
                     style={{

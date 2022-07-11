@@ -30,7 +30,6 @@ export default function MyApp({
             <DynamicResponsiveAppBar />
             <SessionProvider session={session ?? null}>
                 {getLayout(<Component {...pageProps} />)}
-                <Footer />
             </SessionProvider>
         </GlobalErrorBoundary>
     )
