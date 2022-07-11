@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { red } from "@mui/material/colors";
-import { MdFavorite, MdBugReport } from "react-icons/md";
 import CardMedia from "@mui/material/CardMedia";
+import { MdFavorite, MdBugReport } from "react-icons/md";
 import { Card, CardHeader, Avatar, CardContent, Typography, CardActions, IconButton } from "@mui/material";
 
 interface IPostOwner {
@@ -26,7 +26,7 @@ export default function MuiCard({id, image, likes, owner, publishDate, tags, tex
     const [testError, setTestError] = useState<boolean>(false)
 
     const clientError = () => {
-        throw new Error(`Error on card ${id}, from user ${owner.title}`)
+        throw new Error(`Error on card ${id}, from user ${owner.firstName} ${owner.lastName}`)
     }
 
     const handleLikeClick = () => {
@@ -34,7 +34,7 @@ export default function MuiCard({id, image, likes, owner, publishDate, tags, tex
     }
 
     return (
-    <Card sx={{ width: 300, position: 'relative' }}>
+    <Card sx={{ width: 230, position: 'relative' }}>
         <CardHeader
         avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">

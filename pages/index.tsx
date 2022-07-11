@@ -1,9 +1,6 @@
-import type { NextPage } from 'next'
 import Head from 'next/head'
-import { RecoilRoot } from 'recoil'
-import { RecoilJsDemo } from '../components/RecoilTeste/RecoilTeste'
-import { ComponentErrorHandling } from '../components/ErrorTest/ComponentError'
-import { GlobalErrorTest } from '../components/ErrorTest/GlobalError'
+import type { NextPage } from 'next'
+import { Typography } from '@mui/material'
 
 const Home: NextPage = () => {
     return (
@@ -24,24 +21,14 @@ const Home: NextPage = () => {
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    flexGrow: 'auto',
-                    width: '100%',
-                    textAlign: 'center',
-                    border: '2px solid #d68edd',
-                    paddingBottom: '5rem',
+                    justifyContent: 'center',
+                    margin: '5rem',
+                    textAlign:'center'
                 }}
             >
-                <h1>Boilerplate NextJs - Kaspa</h1>
-                <p> Next-Auth | RecoilJs | ESLint | Prettier | Husky | SWR</p>
-                <div style={{ alignContent: 'center', height: '100%' }}>
-                    <h2> Recoil Js Demo </h2>
-                    <RecoilRoot>
-                        <RecoilJsDemo />
-                        <br />
-                        <h2> Error Handling Demo </h2>
-                        <GlobalErrorTest />
-                        <ComponentErrorHandling />
-                    </RecoilRoot>
+                <Typography variant='h4'>Boilerplate NextJs - Kaspa</Typography>
+                <Typography> Next-Auth | RecoilJs | ESLint | Prettier | Husky | SWR</Typography>
+                <div style={{ margin: '1rem', height: '100%' }}>
                 </div>
             </main>
         </>

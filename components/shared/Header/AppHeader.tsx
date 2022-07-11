@@ -3,9 +3,10 @@ import { useRouter } from "next/router";
 import { FiChrome } from "react-icons/fi";
 import { IoIosMenu } from "react-icons/io";
 import { AppBar, Container, Toolbar, Box, IconButton, Menu, MenuItem, Typography, Button } from "@mui/material";
+import Link from "next/link";
 
-const pages = ['Home', 'Posts'];
-const link = [ '/', '/posts']
+const pages = ['Home', 'Error Handling', 'Recoil Js'];
+const link = [ '/', '/error-handling', 'recoil-js']
 
 const ResponsiveAppBar = () => {
   const router = useRouter()
@@ -70,7 +71,9 @@ const ResponsiveAppBar = () => {
               ))}
             </Menu>
           </Box>
-            <FiChrome size={40} />
+          <Link href='/'>
+            <FiChrome size={40} style={{ cursor: 'pointer'}} />
+          </Link>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page, index) => (
               <Button
