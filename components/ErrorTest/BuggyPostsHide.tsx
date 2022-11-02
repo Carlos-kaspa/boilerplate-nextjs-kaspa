@@ -1,11 +1,11 @@
 import React from 'react'
-import ComponentLoader from '../shared/ComponentLoader/ComponenLoader'
-import ContextErrorHandler from '../shared/ContextErrorHandler/ContextErrorHandler'
+import ComponentLoader from '../global/ComponentLoader/ComponenLoader'
+import ContextErrorHandler from '../global/ContextErrorHandler/ContextErrorHandler'
 import dynamic from 'next/dynamic'
-import { IBlogPost } from '../shared/Mui/MuiCard'
+import { IBlogPost } from '../global/Mui/MuiCard'
 import { NextComponentType } from 'next'
 
-const DynamicMuiCard = dynamic(() => import('../shared/Mui/MuiCard'), {
+const DynamicMuiCard = dynamic(() => import('../global/Mui/MuiCard'), {
     suspense: true,
 })
 

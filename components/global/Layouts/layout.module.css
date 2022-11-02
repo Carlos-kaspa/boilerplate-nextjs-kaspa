@@ -1,0 +1,9 @@
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    background-color: aqua;
+    margin-right: auto;
+    margin-left: auto;
+}

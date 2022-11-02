@@ -15,8 +15,8 @@
     },
     "husky": {
         "hooks": {
-          "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
-          "pre-commit": "npx eslint src --fix --quiet"
+            "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+            "pre-commit": "npx eslint src --fix --quiet"
         }
     },
     "dependencies": {

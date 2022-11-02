@@ -1,8 +1,10 @@
 import Head from 'next/head'
-import type { NextPage } from 'next'
+import type { ReactElement } from 'react'
 import { Typography } from '@mui/material'
+import DefaultLayout from '../components/global/Layouts/DefaultLayout.layout'
+import { NextPageWithLayout } from './_app'
 
-const Home: NextPage = () => {
+const Home: NextPageWithLayout = () => {
     return (
         <>
             <Head>
@@ -16,23 +18,28 @@ const Home: NextPage = () => {
                     href="/favicon.ico"
                 />
             </Head>
-
             <main
                 style={{
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'center',
                     margin: '5rem',
-                    textAlign:'center'
+                    textAlign: 'center',
                 }}
             >
-                <Typography variant='h4'>Boilerplate NextJs - Kaspa</Typography>
-                <Typography> Next-Auth | RecoilJs | ESLint | Prettier | Husky | SWR</Typography>
-                <div style={{ margin: '1rem', height: '100%' }}>
-                </div>
+                <Typography variant="h4">Boilerplate NextJs - Kaspa</Typography>
+                <Typography>
+                    {' '}
+                    Next-Auth | RecoilJs | ESLint | Prettier | Husky | SWR
+                </Typography>
+                <div style={{ margin: '1rem', height: '100%' }}></div>
             </main>
         </>
     )
+}
+
+Home.getLayout = function getLayout(page: ReactElement) {
+    return <DefaultLayout>{page}</DefaultLayout>
 }
 
 export default Home

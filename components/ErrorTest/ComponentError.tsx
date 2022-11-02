@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import ContextErrorHandler from '../shared/ContextErrorHandler/ContextErrorHandler'
+import ContextErrorHandler from '../global/ContextErrorHandler/ContextErrorHandler'
 // import dynamic from 'next/dynamic'
 // const DynamicLoader = dynamic(() => import('./BlogPost), {
 //     suspense: true,

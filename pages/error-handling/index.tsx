@@ -6,9 +6,9 @@ import Typography from '@mui/material/Typography'
 import useDummyAPI from '../api/swr/DummyApi/useDummyAPI'
 import { GlobalErrorTest } from '../../components/ErrorTest/GlobalError'
 import { BuggyPostsHide } from '../../components/ErrorTest/BuggyPostsHide'
-import AddButton from '../../components/shared/Mui/FloatingButton/AddButton'
+import AddButton from '../../components/global/Mui/FloatingButton/AddButton'
 import { BuggyPostsFallback } from '../../components/ErrorTest/BuggyPostsFallback'
-import SubtractButton from '../../components/shared/Mui/FloatingButton/SubtractButton'
+import SubtractButton from '../../components/global/Mui/FloatingButton/SubtractButton'
 
 const PostsPage: NextPage = () => {
     const [ postLimit, setPostLimit] = useState(5)
