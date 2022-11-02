@@ -1,15 +1,9 @@
 import { useState } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import { IoIosMenu } from "react-icons/io";
+import { IoIosMenu } from 'react-icons/io'
 
-import {
-    AppBar,
-    Container,
-    Toolbar,
-    Box,
-    IconButton,
-} from '@mui/material'
+import { AppBar, Container, Toolbar, Box, IconButton } from '@mui/material'
 import Link from 'next/link'
 import { MENU_NAVIGATION } from './navigationITems'
 import DrawerMenu from './DrawerMenu.component'
@@ -40,7 +34,15 @@ const TopNavBar = () => {
     }
 
     return (
-        <AppBar position="static" sx={{background: '#FFFFFF', color: '#0EA5E9', fontSize: '18px', fontWeight: 700 }}>
+        <AppBar
+            position="static"
+            sx={{
+                background: '#FFFFFF',
+                color: '#0EA5E9',
+                fontSize: '18px',
+                fontWeight: 700,
+            }}
+        >
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Box
