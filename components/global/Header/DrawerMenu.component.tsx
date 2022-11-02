@@ -9,7 +9,7 @@ import ListItemText from '@mui/material/ListItemText'
 
 interface IDrawerMenuProps {
     items: Array<{ name: string; path: string }>
-    toggle: () => void
+    toggle: (e: React.KeyboardEvent | React.MouseEvent) => void
     state: boolean
 }
 

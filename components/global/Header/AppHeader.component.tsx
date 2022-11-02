@@ -9,7 +9,6 @@ import {
     Toolbar,
     Box,
     IconButton,
-    Button,
 } from '@mui/material'
 import Link from 'next/link'
 import { MENU_NAVIGATION } from './navigationITems'
