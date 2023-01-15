@@ -11,7 +11,6 @@ const DefaultLayout: FC<IDefaultLayout> = ({ children }) => {
             <section> header </section>
             <main className={styles.main}>{children}</main>
             <section> footer </section>
-
         </>
     )
 }

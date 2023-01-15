@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ReactElement, ReactNode } from 'react'
-import GlobalErrorBoundary from '../components/global/ErrorBoundary/ErrorBoundary'
+import GlobalErrorBoundary from '../components/global/ErrorBoundary/ErrorBoundary.component'
 
 export type NextPageWithLayout = NextPage & {
     getLayout?: (page: ReactElement) => ReactNode
