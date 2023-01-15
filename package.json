@@ -6,12 +6,11 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
         "prepare": "husky install",
         "postinstall": "husky install",
-        "test": "next lint",
-        "test-all": "yarn lint && yarn type-check && yarn test",
-        "commitlint": "commitlint"
+        "commitlint": "commitlint",
+        "format": "prettier --ignore-path .gitignore --write .  &&  eslint --ignore-path .gitignore --fix .",
+        "lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore ."
     },
     "husky": {
         "hooks": {
@@ -20,21 +19,17 @@
         }
     },
     "dependencies": {
-        "@emotion/react": "^11.9.3",
-        "@emotion/styled": "^11.9.3",
-        "@mui/material": "^5.8.7",
-        "next": "12.2.0",
-        "next-auth": "^4.9.0",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
+        "next": "^13.1.2",
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
         "react-error-boundary": "^3.1.4",
-        "react-icons": "^4.4.0",
-        "recoil": "^0.7.4",
-        "swr": "^1.3.0"
+        "react-icons": "^4.7.1",
+        "recoil": "^0.7.6",
+        "swr": "^2.0.0"
     },
     "devDependencies": {
-        "@commitlint/cli": "^17.0.3",
-        "@commitlint/config-conventional": "^17.0.3",
+        "@commitlint/cli": "^17.4.2",
+        "@commitlint/config-conventional": "^17.4.2",
         "@types/node": "18.0.3",
         "@types/react": "18.0.15",
         "@types/react-dom": "18.0.6",
@@ -43,10 +38,7 @@
         "eslint-config-prettier": "^8.5.0",
         "husky": "^8.0.0",
         "lint-staged": "^13.0.3",
-        "prettier": "2.7.1",
+        "prettier": "^2.8.3",
         "typescript": "4.7.4"
-    },
-    "lint-staged": {
-        "**/*": "prettier --write --ignore-unknown"
     }
 }

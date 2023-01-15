@@ -27,7 +27,7 @@ export default class ContextErrorHandler extends React.Component<
         // Check if the error is thrown
         if (this.state.hasError) {
             // You can hide the component on error
-            if(this.props.hideOnError){
+            if (this.props.hideOnError) {
                 return null
             }
             // Or you can render any custom fallback UI

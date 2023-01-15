@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import type { ReactElement } from 'react'
-import { Typography } from '@mui/material'
 import DefaultLayout from '../components/global/Layouts/DefaultLayout.layout'
 import { NextPageWithLayout } from './_app'
 
@@ -27,11 +26,8 @@ const Home: NextPageWithLayout = () => {
                     textAlign: 'center',
                 }}
             >
-                <Typography variant="h4">Boilerplate NextJs - Kaspa</Typography>
-                <Typography>
-                    {' '}
-                    Next-Auth | RecoilJs | ESLint | Prettier | Husky | SWR
-                </Typography>
+                <h1>Boilerplate NextJs - Kaspa</h1>
+                <h2> Next-Auth | RecoilJs | ESLint | Prettier | Husky | SWR</h2>
                 <div style={{ margin: '1rem', height: '100%' }}></div>
             </main>
         </>

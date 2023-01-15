@@ -1,9 +1,7 @@
 import type { NextPage } from 'next'
 import type { AppProps } from 'next/app'
 import { ReactElement, ReactNode } from 'react'
-import { SessionProvider } from 'next-auth/react'
 import GlobalErrorBoundary from '../components/global/ErrorBoundary/ErrorBoundary'
-
 
 export type NextPageWithLayout = NextPage & {
     getLayout?: (page: ReactElement) => ReactNode
@@ -23,9 +21,7 @@ export default function MyApp({
 
     return (
         <GlobalErrorBoundary>
-            <SessionProvider session={session ?? null}>
-                {getLayout(<Component {...pageProps} />)}
-            </SessionProvider>
+            {getLayout(<Component {...pageProps} />)}
         </GlobalErrorBoundary>
     )
 }
