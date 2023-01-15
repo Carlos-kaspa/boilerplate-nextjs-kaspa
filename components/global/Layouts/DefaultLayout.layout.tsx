@@ -8,9 +8,10 @@ interface IDefaultLayout {
 const DefaultLayout: FC<IDefaultLayout> = ({ children }) => {
     return (
         <>
-            {/* <TopNavBar /> */}
+            <section> header </section>
             <main className={styles.main}>{children}</main>
-            {/* <Footer /> */}
+            <section> footer </section>
+
         </>
     )
 }
