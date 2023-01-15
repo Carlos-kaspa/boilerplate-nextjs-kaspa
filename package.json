@@ -1,7 +1,8 @@
 {
-    "name": "vortex-lp",
-    "version": "0.1.0",
+    "name": "boilerplate-kaspa",
+    "version": "0.0.1",
     "private": true,
+    "description": "Boilerplate for nextjs frontend projects",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
