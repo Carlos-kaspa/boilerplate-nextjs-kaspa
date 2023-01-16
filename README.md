@@ -1,34 +1,46 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Boilerplate NextJS
 
-## Getting Started
+A pre-configured frontend enviroment, to help you skip the boring (_for some people_) part.
 
-First, run the development server:
+## What's in it?
+This project starter-pack has some basic tooling for every project, while still leaving room for design choices of your own.
+### Installed Packages
+#### Basic Enviroment
+- **React**- Latest react shinannigans with [***Suspense***](https://17.reactjs.org/docs/concurrent-mode-suspense.html) and some more QOL improvements.
+- **[NextJS](https://nextjs.org/)** - LTS version
+- **Typescript** - I mean, it's 2023...
+- **[React Icons](https://react-icons.github.io/react-icons/)** - Small, easy to use icon library.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+#### State Management Tools
+- [**Recoil**](https://recoiljs.org/): As good as redux with as little setup as the react context api.
+#### Data Fetching
+- [**SWR**](https://swr.vercel.app/): A powerful wrapper hook for data-fetching with caching out of the box.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Testing
+- [**Jest**](https://jestjs.io/): For some unit testing
+- [**React Testing Library**](https://testing-library.com/docs/react-testing-library/intro/): For some Component AND hooks unit testing.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+#### Project Management
+- **[Prettier](https://prettier.io/)**: Neat code identation is neat.
+- [**ESLint**](https://nextjs.org/docs/basic-features/eslint) No fancy rules, just the default NextJS ones, but it's already working with prettier.
+- [**Husky**](https://typicode.github.io/husky/#/): Commit linting hooks for good, organized commits. We're following [Convention Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) rules here.
+- **[Commitzen](https://commitizen-tools.github.io/commitizen/)**: A very helpful CLI tool for commiting. Just type `git cz` and do your thing.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Quality of Life
+> Already got you covered on all the config you'll need to start your project.
+pre-commit hooks, prettier and lint rules, commit and formatting on a script...
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- **Formatting On Commit**: Husky pre-commit hook to enforce eslint and prettier rules on commit, on all files to keep code organized.
+- **Commit Lint**: Husky rules apply to every commit, enforcing [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0-beta.2/) rules that you may fiddle with later on.
+- **Commitzen**: CLI to help you commit on the right format, type `git cz` in your terminal to use it. 
+- **Global Error Boundary**: Already have a global error boundary setup, fully customizable with logging tools and a UI to your liking.
+- **Unit Testing**: Every component is unit tested, which may be a nice reference to how unit testing and coverage works.
+- **Test Coverage**: Already setup for coverage reports and coverage rules that may be customizable to your liking.
+- **Layouts**: Already using [NextJS Layout](https://nextjs.org/docs/basic-features/layouts) feature to help you set up a nice UI
 
-## Learn More
+## Future Versions
+I'm still deciding on which styling library to use, if any. For now i'll leave it at css modules.
 
-To learn more about Next.js, take a look at the following resources:
+> Last Updated - January 16 2023
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+##### Setup by Carlos-kaspa
