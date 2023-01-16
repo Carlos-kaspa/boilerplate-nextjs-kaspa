@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import ContextErrorHandler from './ContextErrorHandler.component'
-describe('Error Boundary', () => {
+import ComponentErrorBoundary from './ComponentErrorBoundary.component'
+describe('Component Error Boundary', () => {
     beforeAll(() => {
         jest.spyOn(console, 'error').mockImplementation(() => {})
     })
@@ -13,12 +13,12 @@ describe('Error Boundary', () => {
         }, [])
         return null
     }
-  
+
     it('logs error [...]', () => {
         render(
-            <ContextErrorHandler>
+            <ComponentErrorBoundary>
                 <BuggyComponent />
-            </ContextErrorHandler>,
+            </ComponentErrorBoundary>,
         )
         expect(console.error).toHaveBeenCalled()
     })

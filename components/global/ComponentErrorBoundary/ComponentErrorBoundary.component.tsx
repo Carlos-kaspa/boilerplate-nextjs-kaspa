@@ -5,7 +5,7 @@ interface IContextErrorHandlerProps extends ComponentPropsWithRef<any> {
     hideOnError?: boolean
 }
 
-export default class ContextErrorHandler extends React.Component<
+export default class ComponentErrorBoundary extends React.Component<
     any,
     { hasError: boolean }
 > {

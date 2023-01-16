@@ -1,8 +1,8 @@
 import { useEffect } from 'react'
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/react'
-import GlobalErrorBoundary from './ErrorBoundary.component'
-describe('Error Boundary', () => {
+import GlobalErrorBoundary from './GlobalErrorBoundary.component'
+describe('Global Error Boundary', () => {
     beforeAll(() => {
         jest.spyOn(console, 'error').mockImplementation(() => {})
     })
