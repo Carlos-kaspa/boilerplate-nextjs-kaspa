@@ -1,17 +1,20 @@
 import useSWR from 'swr'
 import { DummyAPIFetcher } from './DummyApiFetcher'
 
-export default function useDummyAPI(path: string) {
+export default function useDummyAPI(path: string, shouldFetch: boolean) {
     const baseUrl = process.env.NEXT_PUBLIC_DUMMYAPI_URL
-    const { data, mutate, error } = useSWR(baseUrl + path, DummyAPIFetcher)
+    const { data, mutate, error } = useSWR(
+        () => (shouldFetch ? `${baseUrl}${path}` : null),
+        DummyAPIFetcher,
+        { suspense: true },
+    )
 
     const loading = !data && !error
-    const loggedOut = error && error.status === 403
 
     return {
         loading,
-        loggedOut,
         response: data,
+        error,
         mutate,
     }
 }
