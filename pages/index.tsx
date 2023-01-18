@@ -64,7 +64,12 @@ const Home: NextPageWithLayout = () => {
     }
 
     const Loading = () => {
-        return <div style={{ height: 500, width: 500, background: 'red'}}> loading... </div>
+        return (
+            <div style={{ height: 500, width: 500, background: 'red' }}>
+                {' '}
+                loading...{' '}
+            </div>
+        )
     }
     return (
         <>
@@ -91,8 +96,7 @@ const Home: NextPageWithLayout = () => {
                 <h1>Boilerplate NextJs - Kaspa</h1>
                 <h2> RecoilJs | ESLint | Prettier | Husky | SWR | Jest </h2>
                 <>
-                
-                    <Suspense fallback={<Loading/>}>
+                    <Suspense fallback={<Loading />}>
                         <HOC />
                     </Suspense>
                 </>
