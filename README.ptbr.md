@@ -2,6 +2,50 @@
 
 Um ambiente pré-configurado para te ajudar a pular a parte chata (para alguns rs).
 
+## USando Docker
+
+1. [Instale o Docker](https://docs.docker.com/get-docker/) na sua máquina.
+1. Faça o build do container: `docker build -t next-bp-kaspa .`.
+1. Rode o container: `docker run -p 3000:3000 next-bp-kaspa`.
+
+Você pode conferir a imagem executando o comando `docker images` no seu terminal.
+
+> Se você estiver usando o VSCode como seu editor, instale a extensão Docker da Microsoft para uma experiência melhor com o docker.
+
+## Fazendo deploy no Google Cloud Run
+
+1. Instale o [SDK da Google Cloud](https://cloud.google.com/sdk/docs/install) para que você tenha acesso ao CLI utilizando o comando `gcloud` no seu terminal.
+1. Execute o comando `gcloud auth login` no seu terminal para logar na sua conta.
+1. [Crie um novo projeto](https://cloud.google.com/run/docs/quickstarts/build-and-deploy) no Google Cloud Run (i.e. `next-bp-kaspa` ou o nome que quiser). E confirme que o billing está ativo.
+1. Builde a imagem do seu container usando o Cloud Build: `gcloud builds submit --tag gcr.io/PROJECT-ID/helloworld --project PROJECT-ID`. Isto vai habilitar o serviço de Cloud Build para o seu projeto.
+1. Faça o deploy no Cloud Run: `gcloud run deploy --image gcr.io/PROJECT-ID/helloworld --project PROJECT-ID --platform managed`. E escolha uma região da sua preferência.
+
+    - Será perguntado o nome do seu projeto: pressione Enter para aceitar o nome padrão, `helloworld`.
+    - Será perguntado qual [região](https://cloud.google.com/run/docs/quickstarts/build-and-deploy#follow-cloud-run) você deseja: Selecione a de sua preferência, por exemplo `us-central1`.
+    - Será perguntado se você permite **invocações das cloud functions sem autenticação** (_allow unauthenticated invocations_): responda `y`.
+
+Ou clique no botão abaixo, autorize o script e selecione o projeto e região quando perguntado:
+
+[![Use no Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/vercel/next.js.git&dir=examples/with-docker)
+
+## Running Locally
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
 ## O que tem aqui?
 
 Esse é um starter com algumas ferramentas básicas para todo tipo de projeto, enquanto ainda permite modificações sem muito trabalho, para se ajustar à sua necessidade.

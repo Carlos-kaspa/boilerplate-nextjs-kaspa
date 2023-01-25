@@ -8,6 +8,7 @@ const nextConfig = {
     images: {
         remotePatterns: [{ hostname: 'i.dummyjson.com' }],
     },
+    output: 'standalone',
 }
 
 module.exports = nextConfig

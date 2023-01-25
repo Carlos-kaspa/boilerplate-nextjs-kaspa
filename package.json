@@ -5,10 +5,10 @@
     "description": "Boilerplate for nextjs frontend projects",
     "scripts": {
         "dev": "next dev",
+        "dev-docker": "docker run -u=1000:1000 -v $(pwd):/app -w=/app -d -p 3000:3000 --rm --name=nodedev node bash -c npm install && npm run dev",
         "build": "next build",
         "start": "next start",
         "prepare": "husky install",
-        "postinstall": "husky install",
         "commitlint": "commitlint",
         "format": "prettier --ignore-path .gitignore --write .  &&  eslint --ignore-path .gitignore --fix .",
         "lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore .",
