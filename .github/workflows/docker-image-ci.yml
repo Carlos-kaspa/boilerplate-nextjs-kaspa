@@ -7,7 +7,7 @@ on:
     pull_request:
         branches: [develop, homolog]
 jobs:
-    build:
+    Build Docker Image:
         runs-on: ubuntu-latest
 
         steps:
