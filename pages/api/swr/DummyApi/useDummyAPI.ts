@@ -6,7 +6,6 @@ export default function useDummyAPI(path: string, shouldFetch: boolean) {
     const { data, mutate, error } = useSWR(
         () => (shouldFetch ? `${baseUrl}${path}` : null),
         DummyAPIFetcher,
-        { suspense: true },
     )
 
     const loading = !data && !error
