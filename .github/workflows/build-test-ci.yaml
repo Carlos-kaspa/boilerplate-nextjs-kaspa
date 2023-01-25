@@ -74,4 +74,4 @@ jobs:
             - name: Use cached Dependencies
               run: npm ci
             - name: Unit Tests
-              run: npm test:coverage
+              run: npm run test:coverage
