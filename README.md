@@ -96,6 +96,6 @@ This project starter-pack has some basic tooling for every project, while still 
 
 I'm still deciding on which styling library to use, if any. For now i'll leave it at css modules.
 
-> Last Updated - January 16 2023
+> Last Updated - January 25 2023
 
 ##### Setup by Carlos-kaspa

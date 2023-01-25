@@ -95,6 +95,6 @@ Esse é um starter com algumas ferramentas básicas para todo tipo de projeto, e
 
 Ainda estou decidindo qual biblioteca ou pacote utilizar para estilização, mas no momento estou usando css modules.
 
-> Última atualização - 16 de Janeiro de 2023
+> Última atualização - 25 de Janeiro de 2023
 
 ##### Setup by Carlos-kaspa
