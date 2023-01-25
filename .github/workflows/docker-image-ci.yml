@@ -1,11 +1,11 @@
 name: Docker Image CI
 
 on:
-    workflow_run:
-        workflows: ['Build']
-        types:
-            - completed
-
+     # Triggers the workflow on push or pull requests 
+    push:
+        branches: [master]
+    pull_request:
+        branches: [develop, homolog]
 jobs:
     build:
         runs-on: ubuntu-latest
