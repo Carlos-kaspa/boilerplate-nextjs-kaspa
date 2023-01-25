@@ -2,7 +2,7 @@ const nextJest = require('next/jest')
 
 const createJestConfig = nextJest({
     // Provide the path to your Next.js app to load next.config.js and .env files in your test environment
-    dir: './',
+    dir: '.',
 })
 
 // Add any custom config to be passed to Jest
@@ -13,7 +13,7 @@ const customJestConfig = {
     // if using TypeScript with a baseUrl set to the root directory then you need the below for alias' to work
     moduleDirectories: ['node_modules', '<rootDir>/'],
     collectCoverage: true,
-    collectCoverageFrom: ['<rootDir>/components/**.ts*'],
+    collectCoverageFrom: ['<rootDir>/components/**'],
     coverageThreshold: { global: { lines: 75 } },
     testEnvironment: 'jest-environment-jsdom',
     verbose: true,
