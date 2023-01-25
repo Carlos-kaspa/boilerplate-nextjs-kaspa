@@ -2,31 +2,30 @@ name: Unit Testing CI
 
 # Controls when the action will run.
 on:
-# Triggers the workflow after the Build CI job succeeded
+    # Triggers the workflow after the Build CI job succeeded
     workflow_run:
-        workflows: ["Build CI"]
+        workflows: ['Build CI']
         types:
             - completed
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+    Unit Tests:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
 
-  Unit Tests:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [15.x, 16.x]
 
-    strategy:
-        matrix:
-            node-version: [15.x, 16.x]
-
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-        # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-        - uses: actions/checkout@v2
-        - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v2
-          with:
-              node-version: ${{ matrix.node-version }}
-        - name: npm ci, build and test
-          run: |
-              npm test:coverage
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v2
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: npm ci, build and test
+              run: |
+                  npm test:coverage
