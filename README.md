@@ -142,6 +142,7 @@ This script scans your code for codesmells and security issues and sends it auto
 ## Future Versions
 
 I'm still deciding on which styling library to use, if any. For now i'll leave it at css modules.
+Still need to [integrate ESLint and Jest reports to SonarQube dashboard](https://javascript.plainenglish.io/how-to-set-up-sonarqube-locally-on-a-react-typescript-project-ec02cd8e2626)
 
 > Last Updated - January 25 2023
 
