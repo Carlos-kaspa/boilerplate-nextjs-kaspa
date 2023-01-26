@@ -37,6 +37,7 @@ npm run dev:docker
 # or
 yarn dev:docker
 ```
+
 ### Using regular Dev Server
 
 ```bash
@@ -54,6 +55,7 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 ## SonarQube Local Setup
+
 > SonarQube is a code analyzer, not mandatory and not yet integrated with any of the CI workflows already configured in this project.
 > We're using the community version, which is free, but only if you run if locally.
 
@@ -70,15 +72,17 @@ sysctl -w vm.max_map_count=262144
 ```
 
 You need to leave this terminal running sonarqube during it's usage.
-- Access the dashboard on http://localhost:9000
-- Login using the credentials: 
-> username: admin 
-> password: admin
 
-- Create a new project
-- Give it a name, for default use `next-boilerplate`
-- Generate a token
-- Edit sonarqube.scanner.js with your project key and token
+-   Access the dashboard on http://localhost:9000
+-   Login using the credentials:
+
+    > username: admin
+    > password: admin
+
+-   Create a new project
+-   Give it a name, for default use `next-boilerplate`
+-   Generate a token
+-   Edit sonarqube.scanner.js with your project key and token
 
 While SonarQube container is running, you can scan your code and send it to the dashboard running:
 
@@ -87,6 +91,7 @@ npm run sonar:scan
 ```
 
 This script scans your code for codesmells and security issues and sends it automatically to the dashboard where you can get a full review.
+
 ### Installed Packages
 
 #### Basic Enviroment

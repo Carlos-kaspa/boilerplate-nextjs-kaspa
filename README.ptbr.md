@@ -29,6 +29,7 @@ Ou clique no botão abaixo, autorize o script e selecione o projeto e região qu
 [![Use no Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/vercel/next.js.git&dir=examples/with-docker)
 
 ## Rodando o projeto
+
 ### com Docker + Hot Reload
 
 ```bash
@@ -36,6 +37,7 @@ npm run dev:docker
 # or
 yarn dev:docker
 ```
+
 ### Localmente sem Docker
 
 ```bash
@@ -50,8 +52,8 @@ Você pode começar editando o `pages/index.js`. A página atualiza conforme as 
 
 O diretório `pages/api` é mapeado para a rota `/api/*`. Arquivos neste diretório são tratados como [Rotas de API](https://nextjs.org/docs/api-routes/introduction) ao invés de páginas React.
 
-
 ## SonarQube Configuração Local
+
 > O SonarQube é um analizador de código, não é mandatório nem está integrado com nenhum workflow de CI deste projeto.
 > Estamos usando a versão Community, que é de graça, mas só se você usar localmente.
 
@@ -60,28 +62,32 @@ Para usar localmente, execute o comando no terminal:
 ```bash
 npm run sonar:build
 ```
+
 Se um erro ocorrer, indicando que atingiu o limite de memória da vm, aumente para o necessário com o comando:
 
 ```bash
 sysctl -w vm.max_map_count=262144
 ```
+
 Durante o uso do SonarQube, é necessário deixar este terminal aberto.
 
-- Acesse o dashboard em http://localhost:9000
-- Faça login utilizando as credenciais: 
-> username: admin 
-> password: admin
+-   Acesse o dashboard em http://localhost:9000
+-   Faça login utilizando as credenciais:
 
-- Crie um projeto
-- Dê um nome ou utilize o nome padrão `next-boilerplate`
-- Gere um token
-- Edite o arquivo `sonarqube.scanner.js` na raiz deste projeto substituindo pelo seu project key e token
+    > username: admin
+    > password: admin
+
+-   Crie um projeto
+-   Dê um nome ou utilize o nome padrão `next-boilerplate`
+-   Gere um token
+-   Edite o arquivo `sonarqube.scanner.js` na raiz deste projeto substituindo pelo seu project key e token
 
 Enquanto o SonarQube estiver rodando no seu terminal, abra um novo terminal e execute o comando:
 
 ```bash
 npm run sonar:scan
 ```
+
 Este script escaneia do seu código e envia para o dashboard, gerando um relatório completo de code smells e falhas de segurança
 
 ### Pacotes NPM instalados
