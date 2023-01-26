@@ -135,6 +135,7 @@ Este script escaneia do seu código e envia para o dashboard, gerando um relató
 
 Ainda estou decidindo qual biblioteca ou pacote utilizar para estilização, mas no momento estou usando css modules.
 Ainda preciso [integrar os relatŕios do ESLint e Jest no dashboard do SonarQube ](https://javascript.plainenglish.io/how-to-set-up-sonarqube-locally-on-a-react-typescript-project-ec02cd8e2626)
+
 > Última atualização - 25 de Janeiro de 2023
 
 ##### Setup by Carlos-kaspa
