@@ -30,12 +30,19 @@ Or click the button below, authorize the script, and select the project and regi
 
 ## Running Locally
 
-First, run the development server:
+### Using Docker + Hot Reload
 
 ```bash
-npm run dev
+npm run dev:docker
 # or
-yarn dev
+yarn dev:docker
+```
+### Using regular Dev Server
+
+```bash
+npm run dev:docker
+# or
+yarn dev:docker
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -46,10 +53,40 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## What's in it?
+## SonarQube Local Setup
+> SonarQube is a code analyzer, not mandatory and not yet integrated with any of the CI workflows already configured in this project.
+> We're using the community version, which is free, but only if you run if locally.
 
-This project starter-pack has some basic tooling for every project, while still leaving room for design choices of your own.
+In order to use it locally run:
 
+```bash
+npm run sonar:build
+```
+
+If you get a memory limit error try increasing the vm memory limit by running
+
+```bash
+sysctl -w vm.max_map_count=262144
+```
+
+You need to leave this terminal running sonarqube during it's usage.
+- Access the dashboard on http://localhost:9000
+- Login using the credentials: 
+> username: admin 
+> password: admin
+
+- Create a new project
+- Give it a name, for default use `next-boilerplate`
+- Generate a token
+- Edit sonarqube.scanner.js with your project key and token
+
+While SonarQube container is running, you can scan your code and send it to the dashboard running:
+
+```bash
+npm run sonar:scan
+```
+
+This script scans your code for codesmells and security issues and sends it automatically to the dashboard where you can get a full review.
 ### Installed Packages
 
 #### Basic Enviroment
@@ -60,6 +97,7 @@ This project starter-pack has some basic tooling for every project, while still 
 -   **[React Icons](https://react-icons.github.io/react-icons/)** - Small, easy to use icon library.
 
 #### CI/CD Tools
+
 -   **[Docker](https://react-icons.github.io/react-icons/)** - Basic configuration for docker deployment.
 -   **[GitHub Workflows](https://react-icons.github.io/react-icons/)** - Container integrity, build and testing CI scripts, already configured.
 

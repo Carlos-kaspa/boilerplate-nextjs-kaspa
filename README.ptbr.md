@@ -28,9 +28,15 @@ Ou clique no botão abaixo, autorize o script e selecione o projeto e região qu
 
 [![Use no Google Cloud](https://deploy.cloud.run/button.svg)](https://deploy.cloud.run/?git_repo=https://github.com/vercel/next.js.git&dir=examples/with-docker)
 
-## Running Locally
+## Rodando o projeto
+### com Docker + Hot Reload
 
-First, run the development server:
+```bash
+npm run dev:docker
+# or
+yarn dev:docker
+```
+### Localmente sem Docker
 
 ```bash
 npm run dev
@@ -38,17 +44,45 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Você pode começar editando o `pages/index.js`. A página atualiza conforme as alterações.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+O diretório `pages/api` é mapeado para a rota `/api/*`. Arquivos neste diretório são tratados como [Rotas de API](https://nextjs.org/docs/api-routes/introduction) ao invés de páginas React.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-## O que tem aqui?
+## SonarQube Configuração Local
+> O SonarQube é um analizador de código, não é mandatório nem está integrado com nenhum workflow de CI deste projeto.
+> Estamos usando a versão Community, que é de graça, mas só se você usar localmente.
 
-Esse é um starter com algumas ferramentas básicas para todo tipo de projeto, enquanto ainda permite modificações sem muito trabalho, para se ajustar à sua necessidade.
+Para usar localmente, execute o comando no terminal:
+
+```bash
+npm run sonar:build
+```
+Se um erro ocorrer, indicando que atingiu o limite de memória da vm, aumente para o necessário com o comando:
+
+```bash
+sysctl -w vm.max_map_count=262144
+```
+Durante o uso do SonarQube, é necessário deixar este terminal aberto.
+
+- Acesse o dashboard em http://localhost:9000
+- Faça login utilizando as credenciais: 
+> username: admin 
+> password: admin
+
+- Crie um projeto
+- Dê um nome ou utilize o nome padrão `next-boilerplate`
+- Gere um token
+- Edite o arquivo `sonarqube.scanner.js` na raiz deste projeto substituindo pelo seu project key e token
+
+Enquanto o SonarQube estiver rodando no seu terminal, abra um novo terminal e execute o comando:
+
+```bash
+npm run sonar:scan
+```
+Este script escaneia do seu código e envia para o dashboard, gerando um relatório completo de code smells e falhas de segurança
 
 ### Pacotes NPM instalados
 

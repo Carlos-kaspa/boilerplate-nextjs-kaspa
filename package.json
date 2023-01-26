@@ -13,7 +13,9 @@
         "format": "prettier --ignore-path .gitignore --write .  &&  eslint --ignore-path .gitignore --fix .",
         "lint": "prettier --ignore-path .gitignore --check . && eslint --ignore-path .gitignore .",
         "test:coverage": "jest",
-        "test": "jest --watch"
+        "test": "jest --watch",
+        "sonar:run": "docker-compose up",
+        "sonar:scan": "node sonarqube.scanner.js"
     },
     "husky": {
         "hooks": {
@@ -49,6 +51,7 @@
         "lint-staged": "^13.0.3",
         "npm": "^9.3.0",
         "prettier": "^2.8.3",
+        "sonarqube-scanner": "^3.0.0",
         "typescript": "4.7.4"
     },
     "config": {
