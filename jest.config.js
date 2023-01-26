@@ -14,7 +14,9 @@ const customJestConfig = {
     moduleDirectories: ['node_modules', '<rootDir>/'],
     collectCoverage: true,
     collectCoverageFrom: ['<rootDir>/components/**'],
-    coverageThreshold: { global: { lines: 75 } },
+    coverageThreshold: {
+        global: { lines: 75, branches: 60, functions: 80, statements: 75 },
+    },
     testEnvironment: 'jest-environment-jsdom',
     verbose: true,
 }
