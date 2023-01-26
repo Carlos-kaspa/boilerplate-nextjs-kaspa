@@ -1,4 +1,5 @@
 # Boilerplate NextJS
+[🇧🇷🇵🇹 _Portuguese Version_](https://github.com/Carlos-kaspa/boilerplate-nextjs-kaspa/blob/master/README.ptbr.md)
 
 A pre-configured frontend enviroment, to help you skip the boring (_for some people_) part.
 
