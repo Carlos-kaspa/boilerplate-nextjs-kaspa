@@ -59,6 +59,10 @@ This project starter-pack has some basic tooling for every project, while still 
 -   **Typescript** - I mean, it's 2023...
 -   **[React Icons](https://react-icons.github.io/react-icons/)** - Small, easy to use icon library.
 
+#### CI/CD Tools
+-   **[Docker](https://react-icons.github.io/react-icons/)** - Basic configuration for docker deployment.
+-   **[GitHub Workflows](https://react-icons.github.io/react-icons/)** - Container integrity, build and testing CI scripts, already configured.
+
 #### State Management Tools
 
 -   [**Recoil**](https://recoiljs.org/): As good as redux with as little setup as the react context api.
